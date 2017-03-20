@@ -1,0 +1,168 @@
+aside.more{
+  @extend %absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 9999999;
+  span{
+    background: #ea1d1d;
+    @extend %inline-block;
+    width: 0.6rem;
+    height: 0.6rem;
+    @include border-radius(50%);
+    @extend %absolute;
+    top: 0;
+    right: 0;
+  }
+}
+.guide{
+  @extend .left;
+  width: 100%;
+  ul{
+    @extend .left;
+    width: 100%;
+    li{
+      padding-top: 1rem;
+      @extend .left;
+      width: 33.3%;
+      height: 10rem;
+      text-align: center;
+      @include box-sizing(border-box);
+      h3{
+        @extend %font-size-16;
+        em{
+          color:#faac23;
+        }
+        p{
+          line-height: 1;
+        }
+      }
+      &:nth-child(1){
+        border-right: 1px #eee solid;
+      }
+      &:nth-child(2){
+        border-right: 1px #eee solid;
+      }
+    }
+  }
+}
+.new-title{
+  background: #eeeff3;
+  @include clearfix;
+  padding: 0.5rem 0 0 0;
+  ul{
+    width: 100%;
+    background: #fff;
+    @extend .left;
+    li{
+      @extend .left;
+      @include box-sizing(border-box);
+      &.text{
+        width: 65%;
+        padding: 1.6rem 0 0 2rem;
+        color: #333;
+        p{
+          @extend %font-size-16;
+        }
+        h2{
+          @extend %font-size-18;
+          em{
+            color: #ed473b;
+            padding-left: 0.5rem;
+          }
+        }
+      }
+      &.solid-logo{
+        width: 35%;
+      }
+    }
+  }
+}
+.income-area{
+  background: #eeeff3;
+  width: 100%;
+  @include clearfix;
+  margin-bottom: 4rem;
+  .income-top{
+    padding: 0.5rem;
+    dt{
+      width: 62%;
+      margin-right: 1%;
+      background: #10a0eb url("./assets/images/index/upleft-bj.jpg") no-repeat top center;
+      background-size: 100%;
+      @extend .left;
+      height: 16.5rem;
+    }
+    dd{
+      width: 37%;
+      @extend .left;
+      .right-top{
+        background: #10a0eb url("./assets/images/index/upright-bj1.jpg") no-repeat top center;
+        background-size: 100%;
+        margin-bottom: 0.4rem;
+        @extend %relative;
+        .icon-hot{
+          @extend %absolute;
+          top: 0;
+          right: 0;
+        }
+      }
+      .right-bottom{
+        background: #10a0eb url("./assets/images/index/upright-bj2.jpg") no-repeat top center;
+        background-size: 100%;
+      }
+      .content{
+        height: 8rem;
+        padding: 0rem 1.5rem 0rem 1.2rem;
+      }
+    }
+  }
+  .income-bottom{
+    @include clearfix;
+    padding: 0.3rem 0.5rem 0.5rem;
+    ul{
+      width: 100%;
+      @extend .left;
+      li{
+        @extend .left;
+        height: 6.2rem;
+        &.li-left{
+          width: 30%;
+          margin-right: 1%;
+          background: #10a0eb url("./assets/images/index/downleft-bj.jpg") no-repeat top center;
+          background-size: 100%;
+          .content{
+            height: 6rem;
+            padding: 0rem 0rem 0rem 1.2rem;
+          }
+        }
+        &.li-right{
+          width: 69%;
+          background: #10a0eb url("./assets/images/index/downright-bj.jpg") no-repeat top center;
+          background-size: 100%;
+          .content{
+            height: 6rem;
+            padding: 0rem 1.5rem 0rem 5.5rem;
+          }
+        }
+        h1{
+          line-height: 1.7;
+        }
+      }
+    }
+  }
+  .content{
+      color: #fff;
+      padding: 5rem 0rem 0rem 4rem;
+      line-height: 0rem;
+      h1{
+        @extend %font-size-30;
+        span{
+          @extend %font-size-16;
+          padding-left: 0.5rem;
+        }
+      }
+      p{
+        @extend %font-size-16;
+      }
+    }
+}

@@ -1,0 +1,1146 @@
+@font-face {
+  font-family: 'vux-demo';
+  src: url('//at.alicdn.com/t/font_1457788542_0909772.eot'); /* IE9*/
+  src: url('//at.alicdn.com/t/font_1457788542_0909772.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('//at.alicdn.com/t/font_1457788542_0909772.woff') format('woff'), /* chrome、firefox */
+  url('//at.alicdn.com/t/font_1457788542_0909772.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+  url('//at.alicdn.com/t/font_1457788542_0909772.svg#iconfont') format('svg'); /* iOS 4.1- */
+}
+.demo-icon {
+  font-family: vux-demo;
+  font-size: 20px;
+  padding-right: 10px;
+  color: #04be02;
+  height: $header-height;
+}
+
+.invest-content{
+  padding:0 0 46px;
+  &.order{
+    padding-top:159px;
+  }
+}
+
+.invest-nav{
+  position: fixed;
+  top:0;
+  width:100%;
+  z-index:10;
+}
+
+//投资列表页
+.tabs{
+  @extend %relative;
+  background: #10a0eb;
+  @include height(true, 5rem, 5rem);
+  padding: 0rem 2rem 1rem;
+  ul{
+    position: relative;
+    top: 1rem;
+    width: 100%;
+    border: #fff 1.5px solid;
+    @include height(true, 2.5rem, 2.5rem);
+    @include border-radius(5px);
+    display: flex;
+    @extend %ovh;
+    li{
+      flex:1;
+      height: 100%;
+      line-height: 2.5rem;
+      text-align: center;
+      transition-duration: .8s;
+      &:first-child{
+        border-right: 1px solid #fff;
+      }
+      &:last-child{
+        border-left: 1px solid #fff;
+      }
+      a{
+        color: #fff;
+        @extend %font-size-18;
+      }
+
+      &.active{
+        background: #fff;
+        a{
+          color: #10a0eb;
+        }
+      }
+    }
+  }
+}
+.entry{
+  @include clearfix;
+  .title{
+    @include height(true, 5rem, 5rem);
+    background: #999;
+    color: #fff;
+    padding-left: 1.5rem;
+    @extend %font-size-18;
+  }
+}
+.investLists{
+  width: 100%;
+  .items{
+    background: #f0f0f0;
+  }
+  ul{
+    width: 100%;
+    padding-bottom: 20px;
+    li{
+      background: #fff;
+      margin-top: 1rem;
+      h2{
+        color: #333;
+        @include height(true, 5.3rem, 5.3rem);
+        padding-left: 1rem;
+        border-bottom: #eee 1px solid;
+        @extend %relative;
+        @extend %font-size-18;
+        .new-client{
+          @extend %absolute;
+          top: 0;
+          right: 0;
+        }
+      }
+      em{
+        @extend %inline-block;
+        width: 29px;
+        @include height(true, 29px, 29px);
+        text-align: center;
+        color: #fff;
+        margin-left: .5rem;
+        &.red-xin{
+          background: #e81919;
+        }
+        &.orange{
+          background: #faac23;
+        }
+        &.green{
+          background: #76b12a;
+        }
+        &.silver{
+          background: #0fc5ba;
+        }
+        &.clock{
+          @extend %relative;
+          top: 7px;
+        }
+      }
+      .waveCircle{
+        width: 100px;
+        height: 100px;
+      }
+    }
+    dl{
+      background: #fff;
+      @include clearfix;
+      dt{
+        @include box-sizing(border-box);
+        @extend .right;
+        text-align:center;
+        padding: 1rem 1rem 1rem 0;
+        @extend %relative;
+        .time{
+          @extend %font-size-18;
+          color: #333;
+          time{
+            color: #333;
+            padding-right: 0.5rem;
+          }
+        }
+        &.ing{
+          padding-top:5px;
+          padding-bottom:0.5rem;
+        }
+        &.waiting{
+          padding-top: 2rem;
+          .btn{
+            padding: 15px 0;
+            @extend %font-size-20;
+            em{
+              &.tips{
+                @extend %inline-block;
+                width: 100%;
+                margin-left: 0;
+                @include height(true, 2.5rem, 2.5rem);
+                border: #10a0eb 1px solid;
+                color: #10a0eb;
+                background: none;
+                @extend %font-size-18;
+              }
+            }
+          }
+        }
+      }
+
+      dd{
+        @include box-sizing(border-box);
+        padding: 0.5rem 0 0 1rem;
+        @extend .left;
+        color: #333;
+        h3{
+          line-height: 1.4;
+          @extend %font-size-18;
+        }
+        p{
+          @extend %font-size-16;
+          font{
+            @extend %font-size-22;
+            color: #333;
+          }
+        }
+        i{
+          @extend %font-size-30;
+        }
+      }
+    }
+  }
+  .no-data{
+    text-align:center;
+    padding: 40px 0;
+  }
+}
+.search-area{
+  background-color: #fff;
+  .search-box{
+    @extend %absolute;
+    top:0.6rem;
+    left:0;
+    right:0;
+    .zoom{
+      @extend %inline-block;
+      vertical-align:middle;
+      width: 22px;
+      height: 22px;
+      background: url("./assets/images/icons/search-icon.png") no-repeat top center;
+      background-size: 100% 100%;
+      @extend %absolute;
+      left: 50%;
+      margin-left:-3rem;
+      top: 0.4rem;
+    }
+    input{
+      height:2.6rem;
+      padding-top: 0.4rem;
+      line-height: 1.8rem;
+      text-align: center;
+      border: 0;
+      width:100%;
+      @include box-sizing(border-box);
+      @include border-radius(5px);
+      background-color: #eee;
+      outline:none;
+      &::-webkit-input-placeholder {
+        font-size: 16px;
+      }
+      &:-moz-placeholder {
+        font-size: 16px;
+      }
+      &::-moz-placeholder {
+        font-size: 16px;
+      }
+      &:-ms-input-placeholder {
+        font-size: 16px;
+      }
+    }
+  }
+  .cancel{
+    color: #333;
+    display: none;
+    @extend %absolute;
+    top: 10px;
+    right:-4px;
+    font-size:15px;
+  }
+  &.active{
+    .search-box{
+      right:3rem;
+      input{
+        padding-left: 40px;
+        text-align:left;
+      }
+      .zoom{
+        left: 10px !important;
+        margin-left:0 !important;
+      }
+    }
+    .cancel{
+      display: block
+    }
+  }
+  form{
+    width: 85%;
+  margin: 0 auto;
+  position: relative;
+  @include height(true, 3.5rem, 2.2rem);
+  }
+}
+.sort-list{
+  border-top: #eee 1px solid;
+  background: #fff;
+  @include clearfix;
+  ul{
+    @extend .left;
+    width: 100%;
+    li{
+      width: 25%;
+      @include height(true, 3.5rem, 3.5rem);
+      text-align: center;
+      border-bottom: white 2px solid;
+      @extend .left;
+      @extend %font-size-16;
+      &.active{
+        border-bottom: #10a0eb 2px solid;
+        color: #10a0eb;
+      }
+    }
+  }
+}
+
+//投资详情
+.detail-head{
+  background: #10a0eb url("./assets/images/invest/detail-top-bj.jpg") no-repeat top center;
+  background-size: 100% 100%;
+  .head{
+    text-align: center;
+    @extend %relative;
+    @extend %font-size-22;
+    color: #fff;
+    padding: 1.5rem 0;
+    .icon-goback{
+      @extend %absolute;
+      top: 32%;
+      left: 5%;
+    }
+  }
+  dl{
+    width: 100%;
+    p{
+      @extend %font-size-16;
+      line-height: 1.2;
+      span{
+        @extend %font-size-32;
+        color: #fff;
+      }
+      &.white{
+        color: #fff;
+      }
+      &.gray{
+        color: #e0e2e3;
+      }
+    }
+    dt{
+      @extend .left;
+      width: 70%;
+    }
+    dd{
+      @extend .left;
+      width: 30%;
+    }
+  }
+  .content{
+    padding: 1rem 1.5rem 2rem;
+    @include box-sizing(border-box);
+  }
+  .total{
+    @extend %font-size-24;
+    @include clearfix;
+    color: #fff;
+    padding-top: 2rem;
+    p{
+      &.small-font{
+        @extend %font-size-14;
+        color: #dfe0e3;
+        padding-left: 2rem;
+      }
+    }
+    span{
+      @extend %font-size-14;
+    }
+  }
+}
+.detail-center{
+  h2{
+    text-align: center;
+    color: #333;
+    @extend %font-size-16;
+    padding-top: .5rem;
+  }
+  @extend %relative;
+  background: #fff;
+  .wave-border{
+    padding: 0rem;
+    // border: #fff 2px solid;
+    @extend %absolute;
+    top: -7rem;
+    right: 1.2rem;
+    width: 5.5rem;
+    height: 5.5rem;
+    @include border-radius(50%);
+  }
+  .person-setting{
+    .set-items{
+      padding-top: 0;
+    }
+    ul{
+      border-bottom: #eee 1px solid;
+    }
+    li{
+      .tit{
+        font-size:17px;
+        color:#999;
+        &.first{
+          color: #333;
+        }
+      }
+      .smallfs{
+        @extend %font-size-16;
+        margin-right: 0;
+      }
+
+      &.presell{
+        i{
+          color: #ed473b;
+          padding-left: .5rem;
+        }
+        .pre-time{
+          time{
+            background: #eee;
+            padding: .2rem .4rem;
+            span{
+              float: none;
+            }
+          }
+        }
+      }
+      em.gray{
+        color: #999;
+      }
+      em{
+        position:static;
+      }
+    }
+  }
+}
+.details-box{
+  .set-items{
+    li{
+      border-bottom:0;
+      font-size:15px;
+      .tit{
+        color:#999;
+      }
+    }
+  }
+}
+.view-more{
+  .monitor-footer{
+    padding: 1rem 0 0.5rem;
+    .icon-upglide{
+      -webkit-animation:moveNext 2s 0s infinite;animation:moveNext 2s 0s infinite;
+    }
+    p{
+      text-align: center;
+    }
+    h1{
+      @extend %font-size-14;
+      p{
+        top: -3px;
+      }
+    }
+  }
+}
+@-webkit-keyframes moveNext{
+  0%{ -webkit-transform:translate(0,0);transform:translate(0,0);}
+  10%{ -webkit-transform:translate(0,0.6rem);transform:translate(0,0.6rem);}
+  20%{ -webkit-transform:translate(0,0);transform:translate(0,0);}
+  40%{ -webkit-transform:translate(0,0.6rem);transform:translate(0,0.6rem);}
+  60%{ -webkit-transform:translate(0,0);transform:translate(0,0);}
+  100%{-webkit-transform:translate(0,0);transform:translate(0,0);} 
+}
+.detail-foot-btn{
+  width: 100%;
+  @include height(true, 4rem, 4rem);
+  text-align: center;
+  background: #10a0eb;
+  @extend %relative;
+  &.gray{
+    background: #bbb;
+  }
+  em{
+    color: #fff;
+    @extend %font-size-16;
+    letter-spacing: 2px;
+  }
+  .handle{
+    @extend %inline-block;
+    width: 4rem;
+    height: 3.3rem;
+    background: #69c0ee;
+    @extend %absolute;
+    top: 0;
+    left: 0;
+    padding-top: 0.8rem;
+  }
+}
+.monitor-footer{
+  padding: 4rem 0rem;
+  text-align: center;
+  h3{
+    @extend %font-size-20;
+    color: #10a0eb;
+  }
+  p{
+    @extend %font-size-16;
+  }
+  h1{
+    width: 100%;
+    @extend %font-size-22;
+    @extend %relative;
+    p{
+      @extend %absolute;
+      top: 5px;
+      right: 0;
+      img{
+        width: 80%;
+      }
+    }
+  }
+}
+.calculator-wrap{
+  height: 100vh;
+  background:#fff;
+}
+.calculator{
+  .head{
+    background: #2b3e4e;
+    padding: 2rem 0;
+    height: 4.5rem;
+    ul{
+      li{
+        @extend .left;
+        width: 50%;
+        @include box-sizing(border-box);
+        text-align: center;
+        color: #fff;
+        h1{
+          @extend %font-size-22;
+          line-height: 1.5;
+        }
+        p{
+          @extend %font-size-14;
+          letter-spacing: 2px;
+        }
+        &.border-right{
+          border-right: #616e79 1px solid;
+          .add{
+            font-size: 16px;
+            margin-left: 2px;
+          }
+        }
+      }
+    }
+  }
+  .content{
+    padding: 0 1rem;
+    .calc-input{
+      padding: 1rem 0;
+      text-align: center;
+      @extend %font-size-16;
+      input{
+        @include box-sizing(border-box);
+      }
+      .field{
+        border: #ccc 1px solid;
+        width: 77%;
+        height: 3rem;
+        outline: none;
+        padding-left: 3%;
+      }
+      .btn{
+        @extend %inline-block;
+        width: 20%;
+        height: 3rem;
+        background: #10a0eb;
+        color: #fff;
+        border: none;
+        outline: none;
+      }
+    }
+  }
+}
+.principal-area{
+  background: #eee;
+  width: 100%;
+  h2{
+    text-align: center;
+    color: #00a1e9;
+    padding-top: .5rem;
+    @extend %font-size-16;
+  }
+  h1{
+    text-align: center;
+    color: #00a1e9;
+    @extend %font-size-30;
+    line-height: 1.5;
+    min-height: 45px;
+  }
+  p{
+    text-align: center;
+    padding: 1rem 0;
+    a{
+      @extend %inline-block;
+      width: 90%;
+      @include height(true, 3rem, 3rem);
+      background: #ccc;
+      @extend %font-size-16;
+      color: #fff;
+      letter-spacing: 2px;
+      @include border-radius(3px);
+    }
+    a.blue{
+      background:#10a0eb;
+    }
+  }
+}
+.invest-repayment{
+  h2{
+    color: #333;
+    @extend %font-size-16;
+  }
+  .interest{
+    padding-right: 4%;
+      ul{
+        width: 100%;
+        padding: 0 0 1.5rem .5rem;
+        background: #fff;
+        overflow:hidden;
+        li{
+          @extend .left;
+          width: 33.3%;
+          padding: 1.5rem 0 0;
+          text-align: center;
+          h3{
+            color: #333;
+            line-height: 1.2;
+            @extend %font-size-14;
+            color: #333;
+            i{
+              margin: -0.5rem 0 0 .2rem;
+            }
+          }
+          p{
+            color: #999;
+            @extend %font-size-14;
+          }
+        }
+      }
+    }
+}
+.invest-tabs{
+  border-top: #eee 1px solid;
+  background: #fff;
+  @include clearfix;
+  ul{
+    @extend .left;
+    width: 100%;
+    li{
+      width: 33.3%;
+      @include height(true, 3.5rem, 3.5rem);
+      text-align: center;
+      border-bottom: white 2px solid;
+      @extend .left;
+      @extend %font-size-16;
+      a{
+        color: #333;
+      }
+      &.active{
+        border-bottom: #10a0eb 2px solid;
+        color: #10a0eb;
+        a{
+          color: #10a0eb;
+        }
+      }
+    }
+  }
+}
+.invest-record-list{
+  
+}
+.stroke-count{
+  @include clearfix;
+  ul{
+    @extend .left;
+    width: 100%;
+    text-align: center;
+    background: #f5f8fb;
+    padding: 1rem 0;
+    li{
+      @extend .left;
+      width: 33.3%;
+      border-right: #ddd 1px solid;
+      @include box-sizing(border-box);
+      &.remove-border{
+        border-right: none;
+      }
+      h3{
+        color: #333;
+      }
+    }
+  }
+}
+.employee{
+  ul{
+    background: #fff;
+  }
+}
+.project-info{
+  .project-content{
+    padding: 0 1rem;
+    background: #fff;
+    li{
+      @include clearfix;
+      padding: 1rem 0;
+      border-bottom: #ddd 1px solid;
+      @extend %font-size-14;
+      p{
+        &.xindun{
+          a{
+            @extend .right;
+          }
+        }
+        span{
+          @extend %inline-block;
+          width: 40%;
+          text-align: right;
+          padding-right: 5%;
+        }
+        em{
+          @extend %inline-block;
+          width: 55%;
+          color: #333;
+        }
+      }
+      dl{display: block;}
+      dt{
+        @extend .left;
+        width: 25%;
+        @extend %inline-block;
+        &.big{
+          width: 40%;
+        }
+      }
+      dd{
+        @extend .left;
+        width: 75%;
+        @extend %inline-block;
+        &.small{
+          width: 60%;
+        }
+      }
+      h1{
+        font-weight: bold;
+        color: #333;
+        @extend %font-size-16;
+      }
+    }
+  }
+}
+@media (min-width: 360px) and (max-width: 370px) {
+  
+}
+@media (min-width: 370px) and (max-width: 380px) {
+  .project-info .project-content li dt{
+    width: 20%;
+    &.big{
+      width: 35%;
+    }
+    &.small{
+      width: 65%;
+    }
+  }
+  .project-info .project-content li dd{
+    width: 80%;
+  }
+}
+@media (min-width: 380px) and (max-width: 390px) {
+  
+}
+@media (min-width: 320px) and (max-width: 330px) {
+    .font22, .popup-bottom h3, .popup-top h3, .keyboard ul li, .investLists ul dl dd p font, .detail-head .head, .monitor-footer h1, .calculator .head ul li h1, .invest-type-content dl dt, .result-details h3, .remain-money p span, .award-content .red-packet dl dt .money{
+      font-size: 20px;
+    }
+}
+@media (min-width: 390px) and (max-width: 414px) {
+  .project-info .project-content li dt{
+    width: 20%;
+    &.big{
+      width: 30%;
+    }
+    &.small{
+      width: 70%;
+    }
+  }
+  .project-info .project-content li dd{
+    width: 80%;
+  }
+}
+.invest-type-tabs{
+  border-top: #eee 1px solid;
+  background: #fff;
+  .tab-scroll{
+    overflow-x:scroll;
+    &:-webkit-scrollbar{width:0px;}
+  }
+  ul{
+    background: #fff;
+    display: -webkit-flex;
+    li{
+      background: #fff;
+      padding: 0 1rem;
+      white-space: nowrap;
+      @include height(true, 3.5rem, 3.5rem);
+      text-align: center;
+      border-bottom: white 2px solid;
+      @extend .left;
+      @extend %font-size-16;
+      &.active{
+        border-bottom: #10a0eb 2px solid;
+        color: #10a0eb;
+      }
+    }
+  }
+}
+// 项目进度
+.invest-progress{
+  margin: 0 10px;
+  background:#fff;
+  padding-left:10px;
+  border-left: 2px solid #10a0eb;
+  .info{
+    color:#ff7d15;
+    padding: 10px 10px 10px 0;
+  }
+  .list{
+    border:1px solid #ddd;
+    border-width:1px 0;
+    padding-top: 10px;
+    dl{
+      padding:0 10px 10px 80px;
+      position: relative;
+      color:#333;
+      dt{
+        position: absolute;
+        top:0;
+        left:0;
+        font-weight:700;
+        color:#000;
+        white-space:nowrap;
+        &:before{
+          content: ' ';
+          position: absolute;
+          top:0;
+          left:-10px;
+          border: 7px solid #10a0eb;
+          border-color: transparent transparent transparent #10a0eb;
+        }
+      }
+      dd{
+        position: relative;
+        .icon-insure2{
+          position: absolute;
+          top: 4px;
+          left:-15px;
+        }
+      }
+      .time{
+        color:#999;
+      }
+    }
+  }
+}
+.contract-original{
+  table{
+    width: 100%;
+    td{
+      width: 33.3%;
+      border: none;
+      text-align: center;
+      padding-bottom: 1rem;
+      img{
+        border: #bbb 1px solid;
+        width: 90%;
+        height: 8rem;
+      }
+    }
+  }
+}
+.contract-list{
+  overflow:hidden;
+  text-align: center;
+  p{
+    float: left;
+    width: 33.3%;
+    padding-bottom: 1rem;
+  }
+  img{
+    border: #bbb 1px solid;
+    width: 90%;
+    height: 8rem;
+  }
+}
+.repayment-schedule-text{
+  padding: 5% 3% 0;
+  p{
+    line-height: 2;
+    @extend %font-size-14;
+  }
+}
+.invest-bargain{
+  .bargain-note{
+    width: 100%;
+    img{
+      width: 100%;
+    }
+  }
+  .pagination{
+    text-align: center;
+    padding-top: 1rem;
+    background: #fff;
+    span{
+      @extend %inline-block;
+      width: 0.6rem;
+      @include height(true, 0.6rem, 0.6rem);
+      background: #bbb;
+      @include border-radius(50%);
+      margin-right: .5rem;
+      &:last-child{
+        margin-right: 0;
+      }
+      &.active{
+        background: #10a0eb;
+      }
+    }
+  }
+}
+.remain-bill{
+  @extend %font-size-14;
+  padding: 0.5rem 1rem;
+  @include box-sizing(border-box);
+  span{
+    color: #999;
+  }
+  i{
+    color: #ff7d15;
+  }
+  em{
+    @extend .right;
+  }
+}
+.invest-type-content{
+  background: #fff;
+  dl{
+    padding: 0 1rem;
+    dt{
+      padding: .6rem 0;
+      border-bottom: #ddd 1px solid;
+      @extend %font-size-22;
+      color: #333;
+      span{
+        @extend %font-size-14;
+        color: #999;
+        padding-left: 1rem;
+      }
+    }
+    dd{
+      padding: 1rem 0;
+      p{
+        @extend %font-size-16;
+        line-height: 1.8;
+        em{
+          color: #333;
+        }
+      }
+    }
+  }
+}
+.result-details{
+  background: #fff;
+  padding: 0 1rem;
+  @include box-sizing(border-box);
+  ul{
+    li{
+      width: 100%;
+      @include height(true, 6rem, 6rem);
+      @extend %relative;
+      @extend %font-size-16;
+      span{
+        @extend %inline-block;
+        padding-left: 4rem;
+        &.line{
+          padding-left: 0;
+          @extend %absolute;
+          top: 3rem;
+          left: 1.5rem;
+          z-index: 8;
+          width: 3px;
+          height: 5rem;
+          background: #ddd;
+          &.blue{
+            background: #10a0eb;
+          }
+        }
+        &.await{
+          line-height: 1.3;
+          padding-top: 1.2rem;
+          em{
+            @extend %font-size-12;
+          }
+        }
+      }
+      i{
+        @extend %absolute;
+        top: 1.3rem;
+        z-index: 9;
+      }
+    }
+  }
+  h3{
+    @extend %font-size-22;
+    color: #333;
+    span{
+      @extend %font-size-16;
+      padding-left: 1rem;
+      color: #999;
+    }
+  }
+}
+.select-reward{
+  @include clearfix;
+  dl{
+    @extend .left;
+    width: 100%;
+    background: #fff;
+    padding: 1rem;
+    @include box-sizing(border-box);
+    margin-top: 1rem;
+    dt{
+      @extend .left;
+      width: 38%;
+      a{
+        @extend %relative;
+        top: -1.8rem;
+        @extend %inline-block;
+        width: 2rem;
+        @include height(true, 2rem, 2.7rem);
+        border: #bdbdbd 1px solid;
+        @include border-radius(50%);
+        text-align: center;
+        em{
+          @extend %inline-block;
+          width: 1.5rem;
+          @include height(true, 1.5rem, 1.5rem);
+          background: #77be2a;
+          @include border-radius(50%);
+        }
+      }
+      span{
+        margin-left: .5rem;
+        @extend %inline-block;
+        width: 6rem;
+        @include height(true, 6rem, 6rem);
+        background: #10a0eb;
+        text-align: center;
+        color: #fff;
+        @extend %font-size-18;
+        i{
+          @extend %font-size-12;
+        }
+      }
+    }
+    dd{
+      width: 62%;
+      @extend .left;
+      h3{
+        @extend %font-size-16;
+        color: #333;
+        span{
+          margin-left: .2rem;
+          background: #ff7d15;
+          padding: .1rem;
+          color: #fff;
+          @extend %font-size-14;
+        }
+      }
+      p{
+        @extend %font-size-12;
+        height: 18px;
+      }
+    }
+  }
+}
+.agreement-details{
+  h1{
+    text-align: center;
+    font-size:15px;
+    margin-bottom:10px;
+    font-weight: 700;
+    color:#333;
+  }
+  padding: 1rem;
+  @include box-sizing(border-box);
+  background: #fff;
+  p{
+    @extend %font-size-14;
+  }
+}
+.message-tips{
+  height: auto;
+  dt{
+    em{
+      @extend %font-size-16;
+      font-weight: bold;
+      color: #333;
+    }
+    i{
+      @extend %relative;
+      top: .2rem;
+    }
+  }
+  dd{
+    padding-top: 1rem;
+    p{
+      text-overflow:ellipsis;
+      @extend %font-size-14;
+    }
+  }
+}
+.news-details{
+  padding: 1rem;
+  @include box-sizing(border-box);
+  background: #fff;
+  .content{
+    h3{
+      text-align: center;
+      @extend %font-size-18;
+      color: #333;
+    }
+    p{
+      @extend %font-size-14;
+      &.time{
+        text-align: center;
+        @extend %font-size-12;
+      }
+    }
+  }
+}
+
+.new-invest{
+  .title{
+    color: #10a0eb;
+    background: #f0f0f0;
+    @extend %font-size-16;
+    padding-left: 1rem;
+  }
+}

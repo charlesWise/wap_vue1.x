@@ -1,0 +1,23 @@
+@charset "UTF-8";
+
+@import 'sassCore/base';//sassCore 库文件
+@import 'sassCore/core/mixin';
+@import "sassCore/ext/animate/fade";
+@import "sassCore/ext/animate/bounce";
+@import "sassCore/ext/animate/lightspeed";
+@import "sassCore/ext/animate/flip";
+@import "sassCore/ext/animate/special";
+@import 'base/variable';// 自定义网站基础变量设置
+@import 'base/wap_mixin'; // 网站 trj 所用到的mixin集 分类
+@import 'base/base'; //网站基本的设置
+
+// views里面页面对应的css文件
+@import 'views/app.scss';
+@import 'views/ui.scss';
+
+@import 'views/invest.scss';
+@import 'views/account.scss';
+@import 'views/index.scss';
+@import 'views/activity.scss';
+@import 'views/news.scss';
+@import "icons/allicons";

@@ -1,0 +1,1634 @@
+//@font-face {
+//  font-family: 'vux-demo';
+//  src: url('//at.alicdn.com/t/font_1457788542_0909772.eot'); /* IE9*/
+//  src: url('//at.alicdn.com/t/font_1457788542_0909772.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+//  url('//at.alicdn.com/t/font_1457788542_0909772.woff') format('woff'), /* chrome、firefox */
+//  url('//at.alicdn.com/t/font_1457788542_0909772.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+//  url('//at.alicdn.com/t/font_1457788542_0909772.svg#iconfont') format('svg'); /* iOS 4.1- */
+//}
+.fixed-headbar{
+  padding-top:48px;
+  .top-title{
+    position: fixed;
+    top:0;
+    width:100%;
+    z-index:100;
+  }
+}
+.account-header{
+  padding-top: 22%;
+  width:100%;
+  background: #10a0eb;
+  @include clearfix;
+  color: white;
+  font-size: 16px;
+  line-height: 3rem;
+}
+.photo{
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width:100%;
+  background: #10a0eb;
+  color: white;
+  font-size: 16px;
+  padding: 5% 5% 2%;
+  @include clearfix;
+  @include box-sizing(border-box);
+}
+.portrait{
+  @extend .left;
+  img{
+    width: 30px;
+    height: 30px;
+    @include border-radius(50%);
+  }
+}
+.news{
+  @extend .right;
+  @extend %relative;
+  em{
+    @extend %absolute;
+    top: -0.5rem;
+    right: -0.5rem;
+    @extend %inline-block;
+    width: 1.6rem;
+    @include height(true, 1.6rem, 1.6rem);
+    text-align: center;
+    color: #10a0eb;
+    @include border-radius(50%);
+    background-color: #fff;
+    @extend %font-size-12;
+  }
+}
+.account-sum{
+  border-bottom: 1px #34aeee solid;
+  p{
+    text-align: center;
+    line-height: 1.5;
+    &.title{
+      @extend %font-size-14;
+    }
+    &.number{
+      @extend %font-size-44;
+    }
+  }
+}
+.funds{
+  @include clearfix;
+  background: #10a0eb;
+  padding-bottom: 2rem;
+  ul{
+    @extend .left;
+    width: 100%;
+    padding-top: 1rem;
+    li{
+      @extend .left;
+      width: 50%;
+      text-align: center;
+      h2{
+        @extend %font-size-28;
+      }
+      p{
+        line-height: 1;
+      }
+    }
+  }
+}
+.account-container{
+  @include clearfix;
+  .security{
+    @include height(true, 4rem, 4rem);
+    margin-bottom: 4.5rem;
+    background-color: #f0f0f0;
+    text-align: center;
+    @extend %font-size-16;
+  }
+  .account-list{
+    @include clearfix;
+    padding-top: 1rem;
+    background-color: #f0f0f0;
+    ul{
+      width: 100%;
+      background-color: #fff;
+      li{
+        @include height(true, 5rem, 5rem);
+        padding: 0 1rem;
+        border-bottom: #eee 1px solid;
+        a{
+          color: #333;
+          @extend %font-size-18;
+        }
+        span{
+          @extend .right;
+        }
+      }
+    }
+  }
+  .record{
+    width: 100%;
+    @include height(true, 5rem, 5rem);
+    background: #fff;
+    p{
+      border-bottom: #eee 1px solid;
+      @extend %font-size-24;
+      color: #333;
+      padding-left: 1rem;
+      span{
+        @extend .right;
+        @extend %font-size-18;
+        padding-right: 1rem;
+        a{
+          color: #bbb;
+        }
+      }
+    }
+    ul{
+      @extend .left;
+      width: 100%;
+      padding: 1.5rem 0 0.5rem;
+      background: #fff;
+      li{
+        @extend .left;
+        width: 25%;
+        text-align: center;
+        line-height: 1.5;
+        color: #333;
+        @extend %font-size-16;
+        p{
+          @extend %font-size-18;
+        }
+      }
+    }
+    h3{
+      @extend %relative;
+      em{
+        @extend %absolute;
+        top: -1px;
+        right: -10px;
+        width: 1.4rem;
+        @include height(true, 1.4rem, 1.4rem);
+        border: #e81919 1px solid;
+        background-color: #fff;
+        @extend %inline-block;
+        @include border-radius(50%);
+        color: #e81919;
+        @extend %font-size-12;
+      }
+    }
+  }
+}
+
+// 个人设置
+.person-setting{
+  
+}
+.top-title{
+  width: 100%;
+  @include height(true, 4rem, 4rem);
+  background: #10a0eb;
+  @extend %relative;
+  &.bargain{
+    background: #656565;
+  }
+  &.pwd-setting{
+    background: none;
+  }
+  .down-arrow{
+    margin-left: .5rem;
+  }
+  .icon-goback{
+    @extend %absolute;
+    top: 24%;
+    left: 5%;
+  }
+  h1{
+    color: #fff;
+    text-align: center;
+    @include height(true, 4rem, 4rem);
+    @extend %font-size-20;
+    @extend %relative;
+  }
+  .forget-pwd{
+    @extend %font-size-14;
+    @extend %absolute;
+    top: 0%;
+    right: 4%;
+    text-align: center;
+    letter-spacing: 2px;
+    &.deal{
+      color: #999;
+    }
+    &.reward-title{
+      a{
+        padding: .3rem;
+        background: #0381c3;
+        @extend %font-size-16;
+        color: #fff;
+        text-align: center;
+        @include border-radius(3px);
+      }
+    }
+  }
+}
+.right-cen{
+  @include box-sizing(border-box);
+  padding: 0.5rem 2rem;
+  @extend %font-size-16;
+  a{
+    color: #bbb;
+    &.left{
+      @extend .left;
+    }
+    &.right{
+      @extend .right;
+    }
+  }
+}
+.set-items{
+  @include clearfix;
+  padding-top: 1rem;
+  background-color: #f0f0f0;
+  &.invite-xpd{
+    li{
+      padding: 0;
+    }
+    .big{
+      width: 40%;
+      time{
+        color: #bbb;
+      }
+    }
+    .small{
+      width: 30%;
+    }
+  }
+  &.wipe-pt{
+    padding-top: 0;
+    .border-top{
+      border-top: #ddd 1px solid;
+    }
+  }
+  ul{
+    width: 100%;
+    background-color: #fff;
+    li{
+      @include height(true, 5rem, 5rem);
+      padding: 0 1rem;
+      border-bottom: #eee 1px solid;
+      overflow: hidden;
+      @extend %font-size-18;
+      color: #333;
+      i.arrow-r{
+        @extend %relative;
+        top: .2rem;
+      }
+      .amount{
+        @extend %relative;
+        top: -0.005rem;
+      }
+      .most{
+        color: #999;
+        // @extend %font-size-16;
+      }
+      &.choose-album{
+        text-align: center;
+        @extend %relative;
+        p{
+          @extend %absolute;
+          left: 50%;
+          margin-left: -50px;
+        }
+        input{
+          opacity: 0;
+        }
+      }
+      &.del-border{
+        border-bottom: none;
+      }
+      &.log-out{
+        text-align: center;
+        @extend %font-size-19;
+      }
+      a{
+        color: #333;
+        @extend %font-size-17;
+      }
+      em{
+        @extend %relative;
+        top: 0.25rem;
+        margin-right: 1rem;
+      }
+      span{
+        @extend .right;
+        &.select-character{
+          margin-top: 1.6rem;
+          &.character{
+            margin-top: 1.6rem;
+          }
+        }
+        &.not-set{
+          color: #999;
+          &.person-image{
+            line-height: 3.2;
+          }
+        }
+        &.switch{
+          padding-top: 0.8rem;
+        }
+      }
+      .label-width{
+        width: 28%;
+        height: 100%;
+        @extend %inline-block;
+        &.record-left{
+          width: 38%;
+          @extend %font-size-14;
+        }
+        &.code-width{
+          width: 33%;
+        }
+        &.cur-pwd{
+          width: 40%;
+        }
+        &.lable-bank{
+          padding-top: 0.6rem;
+          .bank-text{
+            @extend %font-size-16;
+            line-height: 1.2;
+            em{
+              color: #999;
+            }
+          }
+        }
+        &.trace-log{
+          padding-top: 0.6rem;
+          width: 45%;
+          text-align: left;
+          .log-text{
+            @extend %font-size-16;
+            line-height: 1.2;
+            width: 100%;
+            em{
+              color: #999;
+              @extend %font-size-14;
+            }
+          }
+        }
+      }
+      .input-width{
+        width: 64%;
+        height: 100%;
+        border: none;
+        outline: none;
+        &.record-right{
+          width: 62%;
+          @extend %font-size-14;
+          color: #999;
+          padding-top: 0.2rem;
+        }
+        &.cur-input{
+          width: 60%;
+        }
+        &.dynamic-code{
+          width: 42%;
+        }
+      }
+      .get-code{
+        color: #10a0eb;
+        @extend %font-size-16;
+      }
+    }
+    &.limit{
+      li{
+        @extend %font-size-16;
+        color: #999;
+        @extend %relative;
+        .select-character{
+          @extend %absolute;
+          top: 37%;
+          right: 4%;
+        }
+        span{
+          @extend %inline-block;
+          text-align: center;
+          @extend .left;
+          &.support-bank{
+            width: 50%;
+            text-align: left;
+          }
+          &.single{
+            width: 25%;
+          }
+          &.day{
+            width: 25%;
+          }
+        }
+        em{
+          color: #333;
+          @extend %inline-block;
+          width: 25%;
+          text-align: center;
+          margin-right: 0;
+          &.bank-name{
+            width: 50%;
+            text-align: left;
+          }
+          i{
+            @extend %relative;
+            top: 1rem;
+            margin-right: 2%;
+          }
+        }
+      }
+    }
+    &.bidding{
+      li{
+        @extend %font-size-16;
+        color: #999;
+        @extend %relative;
+        &.bor-blue{
+          border-bottom: #10a0eb 1px solid;
+          color: #10a0eb;
+        }
+        .select-character{
+          @extend %absolute;
+          top: 37%;
+          right: 4%;
+        }
+        span{
+          @extend %inline-block;
+          text-align: center;
+          @extend .left;
+          width: 33.3%;
+          color: #333;
+          font-weight: bold;
+        }
+        em{
+          color: #333;
+          @extend %inline-block;
+          width: 33.3%;
+          text-align: center;
+          margin-right: 0;
+          line-height: 1.2;
+          @extend %font-size-12;
+          &.locate{
+            @extend %relative;
+            top: .8rem;
+          }
+          i{
+            @extend %relative;
+            top: .3rem;
+            margin-right: 2%;
+          }
+        }
+      }
+    }
+    &.limit-getlog{
+      li{
+        @extend %font-size-16;
+        color: #999;
+        @extend %relative;
+        &.bor-blue{
+          border-bottom: #10a0eb 1px solid;
+          color: #10a0eb;
+        }
+        .select-character{
+          @extend %absolute;
+          top: 37%;
+          right: 4%;
+        }
+        span{
+          @extend %inline-block;
+          text-align: center;
+          @extend .left;
+          &.support-bank{
+            width: 40%;
+            text-align: left;
+          }
+          &.single{
+            width: 30%;
+          }
+          &.day{
+            width: 30%;
+          }
+        }
+        em{
+          color: #333;
+          @extend %inline-block;
+          width: 28%;
+          text-align: center;
+          margin-right: 0;
+          line-height: 1.2;
+          @extend %font-size-12;
+          &.bank-name{
+            width: 42%;
+            text-align: left;
+          }
+          i{
+            @extend %relative;
+            top: 1rem;
+            margin-right: 2%;
+          }
+        }
+      }
+    }
+    &.limit-log{
+      li{
+        @extend %font-size-16;
+        color: #999;
+        @extend %relative;
+        &.bor-blue{
+          border-bottom: #10a0eb 1px solid;
+          color: #10a0eb;
+        }
+        .select-character{
+          @extend %absolute;
+          top: 37%;
+          right: 4%;
+        }
+        span{
+          @extend %inline-block;
+          text-align: center;
+          @extend .left;
+          &.support-bank{
+            width: 32%;
+            text-align: left;
+          }
+          &.single{
+            width: 30%;
+          }
+          &.day{
+            width: 30%;
+          }
+        }
+        em{
+          color: #333;
+          @extend %inline-block;
+          width: 33%;
+          text-align: center;
+          margin-right: 0;
+          line-height: 1.2;
+          @extend %font-size-12;
+          &.bank-name{
+            width: 30%;
+            text-align: left;
+          }
+          i{
+            @extend %relative;
+            top: 1rem;
+            margin-right: 2%;
+          }
+        }
+      }
+    }
+  }
+  .big-font{
+    @extend %font-size-20;
+  }
+}
+.verify{
+  padding: 1rem;
+  @extend %font-size-16;
+  em{
+    color: #10a0eb;
+  }
+  &.search-tip{
+    @extend %font-size-14;
+    p{
+      padding-left: 1.3rem;
+    }
+  }
+  .withdraw{
+    p{
+      span{
+        @extend .right;
+      }
+      em{
+        color: #ff7d15;
+      }
+    }
+  }
+  .big{
+    @extend %font-size-20;
+    color: #333;
+  }
+}
+.warm-prompt{
+  text-align: center;
+  padding: 5% 5% 2%;
+  @include box-sizing(border-box);
+  &.withdrawNo{
+    padding: 6rem 8rem;
+  }
+  p{
+    @extend %font-size-16;
+    color: #bbb;
+  }
+}
+.submit-button{
+  text-align: center;
+  padding: 1.5rem 0;
+  &.view-log{
+    padding-top: 0;
+    input{
+      border: #bbb 1px solid;
+    }
+  }
+  .half{
+    width: 40%;
+    outline: none;
+    &.reset-btn{
+      border: #ccc 1px solid;
+      background: #fff;
+      color: #666;
+      margin-right: 1rem;
+    }
+  }
+  input{
+    @extend %inline-block;
+    width: 92%;
+    @include height(true, 3.5rem, 3.5rem);
+    background: #bbb;
+    border: none;
+    color: #FFF;
+    @include border-radius(3px);
+    @extend %font-size-20;
+    &.go-see{
+      width: 100%;
+      @include height(true, 3rem, 3rem);
+    }
+    &.blue{
+      background: #10a0eb;
+    }
+    &.orange{
+      background: #ff7d15;
+    }
+    &.white{
+      background: #fff;
+      color: #999;
+    }
+    &.withdraw-btn{
+      background: #fff;
+      border: #ccc 1px solid;
+      color: #666;
+    }
+  }
+}
+.pay-pwd{
+  p{
+    padding: 2rem 0;
+    text-align: center;
+  }
+  .small-pwd{
+    width: 80%;
+    margin: 0 auto;
+    background: #fff;
+    @include height(true, 3.6rem, 3.6rem);
+    border: #ccc 1px solid;
+    @include border-radius(5px);
+    overflow: hidden;
+    input{
+      width: 16%;
+      text-align: center;
+      height: 100%;
+      outline: none;
+      border: none;
+      border-right: #ccc 1px solid;
+      @extend %font-size-40;
+      &.del-border{
+        border-right: none;
+      }
+    }
+  }
+}
+.photo-setting{
+  width: 100%;
+  @include height(true, 18rem, 18rem);
+  background: #10a0eb;
+  text-align: center;
+  img{
+    width: 100px;
+    height: 100px;
+    @include border-radius(50%);
+  }
+}
+
+.search-view{
+  background-color: #fff;
+  padding-top: 0.5rem;
+  .search-box{
+    @extend %absolute;
+    top:0.6rem;
+    left:0;
+    right:0;
+    .zoom{
+      @extend %inline-block;
+      vertical-align:middle;
+      width: 22px;
+      height: 22px;
+      background: url("./assets/images/icons/search-icon.png") no-repeat top center;
+      background-size: 100% 100%;
+      @extend %absolute;
+      left: 50%;
+      margin-left:-3rem;
+      top: 0.4rem;
+    }
+    input{
+      height:2.6rem;
+      padding: 0.5rem 0;
+      line-height: 1.8rem;
+      text-align: center;
+      border: 0;
+      width:100%;
+      @include box-sizing(border-box);
+      @include border-radius(5px);
+      background-color: #eee;
+      outline:none;
+      @extend %font-size-18;
+      &::-webkit-input-placeholder {
+        font-size: 18px;
+      }
+      &:-moz-placeholder {
+        font-size: 18px;
+      }
+      &::-moz-placeholder {
+        font-size: 18px;
+      }
+      &:-ms-input-placeholder {
+        font-size: 18px;
+      }
+    }
+  }
+  .cancel{
+    color: #333;
+    display: none;
+    @extend %absolute;
+    top:0.6rem;
+    right:0;
+    @extend %font-size-16;
+  }
+  &.active{
+    .search-box{
+      right:3rem;
+      input{
+        padding-left: 40px;
+        text-align:left;
+      }
+      .zoom{
+        left: 10px !important;
+        margin-left:0 !important;
+      }
+    }
+    .cancel{
+      display: block
+    }
+  }
+  form{
+    width: 85%;
+    margin: 0 auto;
+    position: relative;
+    @include height(true, 3.5rem, 2.2rem);
+  }
+}
+.deposit-card{
+  background: #ffffcc;
+  color: #ff7d15;
+  padding: 0.6rem 0 1rem 0.6rem;
+  @extend %font-size-16;
+}
+.remain-money{
+  padding: 2rem 0 1rem 2rem;
+  color: #10a0eb;
+  h3{
+    @extend %font-size-16;
+  }
+  p{
+    @extend %font-size-36;
+    span{
+      @extend %font-size-22;
+    }
+  }
+}
+
+// 理财记录
+.financial-record{
+  padding: 0% 2% 5% 4%;
+  @include box-sizing(border-box);
+  &.record-top{
+    @extend %relative;
+  }
+  .record-list{
+    border-left: #10a0eb 2px solid;
+    h1{
+      width: 100%;
+      @include height(true, 5rem, 5rem);
+      @extend %font-size-18;
+      color: #10a0eb;
+      time{
+        color: #333;
+      }
+      .refund-right{
+        @extend %relative;
+        top: 0.3rem;
+        left: -1px;
+        margin-right: .5rem;
+        @extend %inline-block;
+        width: 0;
+        height: 0;
+        border-top: .8rem solid transparent;
+        border-left: 1rem solid #10a0eb;
+        border-bottom: .8rem solid transparent;
+      }
+    }
+    .sub-content{
+      background: #fff;
+      &.financial{
+        .remark{
+          padding:1rem 0 1rem .5rem;
+          p{
+            @extend %font-size-16;
+            line-height: 1.8;
+            em{
+              color: #333;
+            }
+          }
+        }
+        h2{
+          @extend %font-size-20;
+          color: #333;
+          i{
+            &.green{
+              color: #77be2a;
+            }
+            &.red{
+              color: #ed473b;
+            }
+          }
+        }
+      }
+      .serial{
+        padding:1rem 0 1rem .5rem;
+        border-top: #ddd 1px solid;
+        p{
+          @extend %font-size-14;
+        }
+      }
+      .schedule-btn{
+        @include clearfix;
+        width: 100%;
+        @include height(true, 4.5rem, 4.5rem);
+        border-top: #ddd 1px solid;
+        padding: .8rem 0;
+        &.xin-btn{
+          a{
+            @extend %inline-block;
+            width: 44%;
+            @include height(true, 3rem, 2.7rem);
+            text-align: center;
+            color: #10a0eb;
+            @extend %font-size-16;
+            @include border-radius(5px);
+            border: #10a0eb 1px solid;
+            @include box-sizing(border-box);
+            &.protocol{
+              margin: 0 3% 0 5%;
+            }
+            &.particular{
+
+            }
+          }
+        }
+        p{
+          text-align: center;
+          @extend %font-size-18;
+          color: #cacaca;
+          letter-spacing: 1px;
+        }
+        a{
+          @extend %inline-block;
+          width: 28%;
+          @include height(true, 3rem, 2.7rem);
+          text-align: center;
+          color: #10a0eb;
+          @extend %font-size-16;
+          @include border-radius(5px);
+          border: #10a0eb 1px solid;
+          @include box-sizing(border-box);
+          &.contract{
+            margin: 0 3% 0 5%;
+            &.grey{
+              background: #ddd;
+              border: #ddd 1px solid;
+              color: #fff;
+            }
+          }
+          &.repayment{
+            margin: 0 3% 0 0;
+          }
+          &.progress{
+
+          }
+        }
+      }
+      .status{
+        ul{
+          width: 100%;
+          padding: 0 0 1.5rem 1rem;
+          @extend .left;
+          li{
+            @extend .left;
+            width: 50%;
+            @extend %font-size-16;
+            padding: 1.5rem 0 0;
+            h3{
+              color: #333;
+              line-height: 1.2;
+              i{
+                margin: -0.5rem 0 0 .2rem;
+              }
+            }
+            p{
+              color: #999;
+            }
+          }
+        }
+      }
+      .order-status{
+        ul{
+          width: 100%;
+          @extend .left;
+          li{
+            @extend .left;
+            @extend %font-size-16;
+            padding: 5% 0 5% 5%;
+            border-bottom: #ddd 1px solid;
+            width: 95%;
+            span{
+              padding-right: 1rem;
+              @extend .right;
+            }
+            &.return-amount{
+              color: #333;
+              span{
+                color: #ff7d15;
+              }
+            }
+          }
+        }
+      }
+      .wait-status{
+        ul{
+          width: 100%;
+          padding: 0 0 1.5rem 1rem;
+          @extend .left;
+          li{
+            @extend .left;
+            @extend %font-size-16;
+            padding: 1.5rem 0 0;
+            h3{
+              color: #333;
+              line-height: 1.2;
+              @extend %relative;
+              i{
+                @extend %absolute;
+                right: 1.5rem;
+                top: 0rem;
+              }
+            }
+            p{
+              color: #999;
+              @extend %font-size-14;
+            }
+          }
+        }
+      }
+      h2{
+        border-bottom: #ddd 1px solid;
+        padding: .5rem;
+        .type{
+          @extend %inline-block;
+          width: 4.5rem;
+          @include height(true, 4.5rem, 4.5rem);
+          text-align: center;
+          @include border-radius(50%);
+          @extend %font-size-16;
+          &.blue{
+            border: #10a0eb 2px solid;
+            color: #10a0eb;
+          }
+          &.orange{
+            border: #fbbe52 2px solid;
+            color: #fbbe52;
+          }
+          &.green{
+            border: #77be2a 2px solid;
+            color: #77be2a;
+            @include height(true, 4rem, 1.5rem);
+            padding-top: .5rem;
+          }
+        }
+        .title{
+          @extend %font-size-18;
+          color: #333;
+          padding-left: .6rem;
+          em{
+            @extend %font-size-16;
+            color: #999;
+            padding: 0 .2rem;
+          }
+        }
+        .icon-sign{
+          @extend %inline-block;
+          width: 2rem;
+          @include height(true, 2rem, 2rem);
+          text-align: center;
+          color: #fff;
+          background: #e81919;
+          @extend %font-size-18;
+        }
+      }
+    }
+    &.record-wrap{
+      h2{
+        padding: 10px 10px;
+        min-height:54px;
+        .type{
+          width:50px;
+          height:50px;
+          line-height:50px;
+          float:left;
+        }
+        .title{
+          word-break: break-all;
+          line-height:normal;
+          height:50px;
+          display: -webkit-box;
+          -webkit-box-align:center;
+        }
+      }
+      .status{
+        padding: 10px;
+        overflow:hidden;
+        ul{
+          padding:0;
+          margin-top: -10px;
+          li{
+            margin-top: 10px;
+            padding:0;
+          }
+        }
+      }
+      .schedule-btn{
+        display: -webkit-flex;
+        -webkit-box-sizing:border-box;
+        padding: 10px;
+        height: auto;
+        a{
+          -webkit-flex: 1;
+          margin:0 0 0 5px!important;
+          &:first-child{
+            margin: 0!important;
+          }
+        }
+      }
+    }
+  }
+}
+// 我的奖励
+.award-tab{
+  border-top: #eee 1px solid;
+  background: #fff;
+  @include clearfix;
+  ul{
+    @extend .left;
+    width: 100%;
+    li{
+      width: 25%;
+      @include height(true, 3.5rem, 3.5rem);
+      text-align: center;
+      border-bottom: white 2px solid;
+      @extend .left;
+      @extend %font-size-16;
+      &.active{
+        border-bottom: #10a0eb 2px solid;
+        color: #10a0eb;
+      }
+    }
+  }
+}
+.award-content{
+  h3{
+    color: #10a0eb;
+    text-align: center;
+    @extend %font-size-16;
+    width: 100%;
+    @include height(true, 4rem, 4rem);
+  }
+  .red-packet{
+    padding: 0% 3%;
+    @include box-sizing(border-box);
+    dl{
+      width: 100%;
+      @extend .left;
+      background: url("./assets/images/account/reward-bg.png") no-repeat top center;
+      background-size: 100% 100%;
+      margin-bottom: 1rem;
+      dt{
+        @extend .left;
+        width: 30%;
+        padding: 0.8rem;
+        @include box-sizing(border-box);
+        .money{
+          // width: 100%;
+          // @include height(true, 5.5rem, 5.5rem);
+          background: #10a0eb;
+          padding: 22% 5%;
+          color: #f0f0f0;
+          text-align: center;
+          @extend %font-size-22;
+          @extend %relative;
+          em{
+            @extend %absolute;
+            top: 0;
+            left: 0;
+            @extend %inline-block;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,.3);
+            i{
+              @extend %inline-block;
+              @extend %font-size-14;
+              transform: rotate(-45deg) translate(-1.2rem, -0.5rem);
+              -ms-transform: rotate(-45deg) translate(-1.2rem, -0.5rem);   /* IE 9 */
+              -moz-transform: rotate(-45deg) translate(-1.2rem, -0.5rem);  /* Firefox */
+              -webkit-transform: rotate(-45deg) translate(-1.2rem, -0.5rem); /* Safari 和 Chrome */
+              -o-transform: rotate(-45deg) translate(-1.2rem, -0.5rem);
+            }
+          }
+          span{
+            @extend %font-size-12;
+          }
+        }
+        .source{
+          @extend %font-size-12;
+          color: #10a0eb;
+          padding-top: .2rem;
+        }
+      }
+      dd{
+        @extend .left;
+        width: 70%;
+        padding: 1rem 1rem;
+        @include box-sizing(border-box);
+        p{
+          color: #333;
+          line-height: 2;
+          span{
+            color: #999;
+          }
+          &.condition{
+              @extend %inline-block;
+              @include height(true, 4rem, 2rem);
+              overflow: hidden;
+          }
+        }
+        time{
+          background: #eee;
+          @include border-radius(15px);
+          padding: .3rem .5rem;
+          margin-top: .2rem;
+          i{
+            margin-right: .5rem;
+            @extend %relative;
+            top: 0.3rem;
+            margin-top: .5rem;
+          }
+        }
+      }
+    }
+  }
+}
+.history{
+  text-align: center;
+  padding: 1rem;
+  p{
+    color: #999;
+    a{
+      color: #10a0eb;
+      padding-left: 1rem;
+    }
+  }
+}
+.rule{
+  padding: 5% 5%;
+  @include box-sizing(border-box);
+  height: 100%;
+  background: #fff;
+  p{
+    @extend %font-size-14;
+    line-height: 2;
+    &.power{
+      text-align: right;
+    }
+  }
+}
+.use-log{
+  padding: 5% 5%;
+  @include box-sizing(border-box);
+  aside{
+    padding: 0% 5%;
+    @include box-sizing(border-box);
+    background: #fff;
+    li{
+      border-bottom: #ddd 1px solid;
+      padding: 1rem 0;
+      span{
+        @extend %font-size-14;
+        &.success-invest{
+          color: #333;
+          @extend %font-size-16;
+        }
+      }
+      em{
+        @extend %font-size-14;
+        @extend .right;
+        color: #333;
+        &.amount{
+          @extend %font-size-16;
+          i{
+            color: red;
+            &.green{
+              color: green;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.fortune{
+  background: #13aeee;
+  height: 100%;
+  text-align: center;
+  color: #f0f0f0;
+  p{
+    @extend %font-size-16;
+    padding-top: 2rem;
+    i{
+      @extend %relative;
+      top: 0.3rem;
+      margin-left: .5rem;
+    }
+    &.earning{
+      @extend %font-size-12;
+    }
+    &.sumo{
+      @extend %font-size-18;
+      padding-top: 1rem;
+    }
+    &.extract{
+      a{
+        @extend %inline-block;
+        width: 44%;
+        @include height(true, 3rem, 3rem);
+        text-align: center;
+        color: #fff;
+        @extend %font-size-16;
+        @include border-radius(18px);
+        border: #5bc4fa 1px solid;
+        @include box-sizing(border-box);
+      }
+    }
+  }
+  .footer-due{
+    @include box-sizing(border-box);
+    padding: 0 3rem;
+    padding: 2rem;
+    .due-in{
+      border-top: #57b8f0 1px solid;
+      text-align: left;
+      span{
+        @extend .right;
+        i{
+          @extend %relative;
+          top: 0.2rem;
+        }
+      }
+    }
+  }
+  h1{
+    @extend %font-size-30;
+  }
+}
+.with-finance{
+  p{
+    padding: 0 1rem;
+    @include box-sizing(border-box);
+    // @extend %absolute;
+    // left: 0;
+    // bottom: 0;
+    @include height(true, 4rem, 4rem);
+    width: 100%;
+    background: #ecf1f4;
+    @extend %font-size-16;
+    span{
+      color: #ff7d15;
+      @extend .right;
+    }
+  }
+}
+.repayment{
+  h1{
+    width: 100%;
+    @include height(true, 5rem, 5rem);
+    @extend %font-size-18;
+    color: #10a0eb;
+    padding-left: 3rem;
+  }
+  ul{
+    padding: 0% 5%;
+    @include box-sizing(border-box);
+    background: #fff;
+    li{
+      border-bottom: #ddd 1px solid;
+      padding: 1.2rem 0;
+      @extend %font-size-16;
+      &.title{
+        color: #333;
+        text-align: center;
+      }
+      em{
+        @extend .right;
+        color: #333;
+      }
+    }
+  }
+}
+.transfer{
+  ul{
+    padding: 0% 5%;
+    @include box-sizing(border-box);
+    background: #fff;
+    margin-top: 1rem;
+    li{
+      border-bottom: #ddd 1px solid;
+      padding: 1.2rem 0;
+      @extend %font-size-16;
+      &.btn{
+        text-align: center;
+        a{
+          @extend %inline-block;
+          width: 85%;
+          @include height(true, 3rem, 2.7rem);
+          text-align: center;
+          color: #10a0eb;
+          @extend %font-size-16;
+          @include border-radius(5px);
+          border: #10a0eb 1px solid;
+          @include box-sizing(border-box);
+        }
+      }
+      em{
+        @extend .right;
+        color: #333;
+      }
+    }
+  }
+}
+.notice{
+  @include clearfix;
+  p{
+    @extend %font-size-12;
+    color: #ff7d15;
+    padding: 1rem 0 1rem  1rem;
+  }
+}
+
+/*login*/
+.login-container{
+  background: url("./assets/images/account/login-bg.jpg") no-repeat top center;
+  background-size: 100% 100%;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  .login-close{
+    @extend %relative;
+    i{
+      @extend %absolute;
+      top:1rem;
+      left:1rem;
+    }
+  }
+  .login-form{
+    padding: 5rem 0 20rem;
+  }
+  .input-box{
+    @extend %relative;
+    .open{
+      color: #666;
+      @extend %font-size-14;
+      i{
+        @extend %relative;
+        top: -0.2rem;
+      }
+    }
+    span{
+      @extend %absolute;
+      top: -0.5rem;
+      right: 2rem;
+      &.verifiy-code{
+        top: 1.2rem;
+        @extend %font-size-16;
+      }
+    }
+  }
+  .submit-btn{
+    padding-top: 2rem;
+  }
+  .dengl{ background-color:none;}
+  .login-input{
+    border: none;
+    outline: none;
+    border-bottom: solid 1px #666;
+    width: 86%;
+    padding: 1rem 0;
+    height: 2rem;
+    background: none;
+    color: #fff;
+    @extend %font-size-16;
+  }
+  .login-submit{
+    width: 86%;
+    background-color: #0789cd;
+    padding: 1rem 0;
+    color: #8fbee2;
+    @include border-radius(5px);
+    border: none;
+    @extend %font-size-16;
+  }
+}
+.clean{
+  width: 1.5rem;
+  @include height(true, 1.5rem, 1.2rem);
+  margin-top: 1.8rem;
+  @extend %inline-block;
+  @include border-radius(50%);
+  background: #bbb;
+  color: #fff;
+  text-align: center;
+}
+.input-clean{
+  background: #999;
+}
+.register-protocol{
+  padding: 2rem 1rem;
+  text-align: center;
+  p{
+    @extend %font-size-14;
+    text-indent: 2em;
+    line-height: 1.5;
+  }
+}
+.qifuxin-content{
+  .photo-preview{
+    background: #fff;
+    padding: 30% 0;
+    color: #999;
+    text-align: center;
+    @extend %font-size-16;
+    &.preview{
+      padding: 15% 0;
+    }
+  }
+  .head{
+    text-align: center;
+    background: #fff;
+    padding: 0rem 1rem 3rem;
+    border-bottom: #f0f0f0 1px solid;
+    i{
+      @extend %relative;
+      top: 2rem;
+      margin-right: 30%;
+    }
+    a{
+      @extend %inline-block;
+      background: #10a0eb;
+      border: none;
+      color: #FFF;
+      @include border-radius(3px);
+      @extend %font-size-20;
+      text-align: center;
+      padding: 0.5rem;
+    }
+  }
+}
+.invitation-code{
+  padding: 1rem 2rem 0;
+  p{
+    text-align: left;
+    @extend %font-size-14;
+    i{
+      @extend %relative;
+      top: -0.2rem;
+      margin-left: 2%;
+    }
+    .checkout-gouxuan{
+      @extend %relative;
+          top: 0.2rem;
+    }
+  }
+}
+.no-bidding{
+  padding-top: 25%;
+  text-align: center;
+  p{
+    color: #bbb;
+    @extend %font-size-16;
+  }
+}
+.validation-wrong{
+  padding-top: 6rem;
+  .assure{
+    @extend %font-size-16;
+  }
+  span{
+    background: #666;
+    color: #fff;
+    padding: .6rem 1rem;
+    @extend %font-size-16;
+    @include border-radius(3px);
+  }
+}
+.right-hold{
+  padding-top: 2rem;
+  p{
+    @extend %relative;
+    padding: .6rem 1rem;
+    @extend %font-size-16;
+    span{
+      @extend %inline-block;
+      width: 86%;
+      background: #0789cd;
+      color: #fff;
+      padding: 1rem 0;
+      @extend %font-size-16;
+      @include border-radius(3px);
+    }
+    a.drag-hand{
+      @extend %absolute;
+      top: .6rem;
+      left: 2rem;
+      @extend %inline-block;
+      width: 13%;
+      background: #30a7e9;
+      color: #fff;
+      padding: 1rem 0;
+      @extend %font-size-16;
+      @include border-radius(3px);
+    }
+  }
+}
+.no-commission{
+  background: #fff;
+  padding-top: 30%;
+  p{
+    @extend %font-size-18;
+    text-align: center;
+    color: #464646;
+  }
+}
+.invite-friends{
+  padding: 0 1rem;
+  @include box-sizing(border-box);
+  .content{
+    background: #fff;
+    margin-top: 1rem;
+    h1{
+      @extend %font-size-20;
+      padding: 1rem 0;
+      text-align: center;
+      color: #333;
+    }
+    p{
+      padding: 0 2rem;
+      @extend %font-size-16;
+      span{
+        color: #ff7d15;
+      }
+    }
+  }
+}
+.invite-record{
+  background: #fff;
+  .invite-title{
+    padding: 1.5rem 0;
+    @extend %font-size-14;
+    text-align: center;
+    i{
+      @extend %relative;
+      top: 0.2rem;
+    }
+  }
+}
